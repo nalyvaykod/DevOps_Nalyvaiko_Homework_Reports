@@ -6,6 +6,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "bestrongtf-rg-backend"
+    storage_account_name = "bestrongtfsakeu4g"
+    container_name       = "tfstate"
+    key                  = "beStrong.tfstate"
+  }
 }
 
 provider "azurerm" {
