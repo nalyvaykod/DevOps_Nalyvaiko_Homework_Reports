@@ -6,5 +6,5 @@
 *.tfvars
 *.tfvars.json
 
-terraform.lock.hcl
+.terraform.lock.hcl
 *.log
