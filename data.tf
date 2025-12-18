@@ -26,7 +26,7 @@ resource "azurerm_storage_account" "files" {
   location                      = azurerm_resource_group.main.location
   account_tier                  = "Standard"
   account_replication_type      = "LRS"
-  public_network_access_enabled = false
+  public_network_access_enabled = true
 }
 
 resource "azurerm_storage_share" "fileshare" {

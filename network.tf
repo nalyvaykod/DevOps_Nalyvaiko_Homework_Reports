@@ -17,16 +17,9 @@ resource "azurerm_subnet" "app" {
   name                 = "app-subnet"
   resource_group_name  = azurerm_resource_group.main.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/24"]
+  address_prefixes     = ["10.0.0.0/23"]
 
-  delegation {
-    name = "app-delegation"
 
-    service_delegation {
-      name    = "Microsoft.App/environments"
-      actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
-    }
-  }
 }
 
 resource "azurerm_subnet" "private_endpoints" {
